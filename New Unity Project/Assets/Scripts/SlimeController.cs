@@ -55,7 +55,8 @@ public class SlimeController : MonoBehaviour {
             target = target1;
             distance = distance1;
         }
-        if(distance1 < distance2 || distance2==0)
+
+        if(distance2 < distance1 || distance1==0)
         {
             target = target2;
             distance = distance2;
