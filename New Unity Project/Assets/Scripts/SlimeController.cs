@@ -47,12 +47,13 @@ public class SlimeController : MonoBehaviour {
         float distance1 = Vector2.Distance(target1.position, transform.position);
         float distance2 = Vector2.Distance(target2.position, transform.position);
 
-        if (distance1 < distance2)
+        if (distance1 < distance2 || distance2 == 0f)
         {
             target = target1;
             distance = distance1;
         }
-        else {
+        if (distance1 > distance2|| distance1 == 0f)
+        {
             target = target2;
             distance = distance2;
         }
