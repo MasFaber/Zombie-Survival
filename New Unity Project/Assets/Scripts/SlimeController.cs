@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+
 
 public class SlimeController : MonoBehaviour {
 
+
+    //old
     public float MoveSpeed;
 
     private Rigidbody2D MyRigidBody;
@@ -18,15 +22,32 @@ public class SlimeController : MonoBehaviour {
 
     private Vector3 moveDirection;
 
+    //new
+
+    public float lookRadius=10f;
+    private Transform target;
+ 
+
+
 
 	// Use this for initialization
 
 	void Start () {
+        target = Playermanager.instance.player1.transform;
+        //agent = GetComponent<NavMeshAgent>();
         MyRigidBody = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        float distance = Vector2.Distance(target.position, transform.position);
+
+        if (distance <= lookRadius)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, MoveSpeed * Time.deltaTime);
+            
+        }
+
         if (moving) {
             timeToMoveCounter -= Time.deltaTime;
             MyRigidBody.velocity = moveDirection;
@@ -61,4 +82,11 @@ public class SlimeController : MonoBehaviour {
 
         }
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, lookRadius);
+    }
 }
+
