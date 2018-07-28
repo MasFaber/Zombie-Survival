@@ -44,15 +44,18 @@ public class SlimeController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float distance1 = Vector2.Distance(target1.position, transform.position);
-        float distance2 = Vector2.Distance(target2.position, transform.position);
+        float distance1 = 0f;
+        float distance2 = 0f;
 
-        if (distance1 < distance2 || distance2 == 0f)
+         distance1 = Vector2.Distance(target1.position, transform.position);
+         distance2 = Vector2.Distance(target2.position, transform.position);
+
+        if (distance1 < distance2 || distance2==0f)
         {
             target = target1;
             distance = distance1;
         }
-        if (distance1 > distance2|| distance1 == 0f)
+        if(distance1 < distance2 || distance2==0)
         {
             target = target2;
             distance = distance2;
