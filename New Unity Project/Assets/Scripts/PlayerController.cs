@@ -26,6 +26,13 @@ public class PlayerController : MonoBehaviour {
     public Vector3 direction;
 
 
+    //controls
+    public KeyCode up;
+    public KeyCode down;
+    public KeyCode right;
+    public KeyCode left;
+
+
 
     // Use this for initialization
     void Start() {
@@ -59,10 +66,10 @@ public class PlayerController : MonoBehaviour {
 
         dashCooldownTime -= Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.UpArrow)) { direction += Vector3.up; }
-        if (Input.GetKey(KeyCode.DownArrow)) { direction += Vector3.down; }
-        if (Input.GetKey(KeyCode.LeftArrow)) { direction += Vector3.left; }
-        if (Input.GetKey(KeyCode.RightArrow)) { direction += Vector3.right; }
+        if (Input.GetKey(up)) { direction += Vector3.up; }
+        if (Input.GetKey(down)) { direction += Vector3.down; }
+        if (Input.GetKey(left)) { direction += Vector3.left; }
+        if (Input.GetKey(right)) { direction += Vector3.right; }
 
         direction.Normalize();
 

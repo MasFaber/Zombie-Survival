@@ -17,5 +17,7 @@ public class Playermanager : MonoBehaviour {
     #endregion;
 
     public GameObject player1;
+    public GameObject player2;
+
 
 }

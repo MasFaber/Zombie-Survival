@@ -25,22 +25,37 @@ public class SlimeController : MonoBehaviour {
     //new
 
     public float lookRadius=10f;
+    private Transform target1;
+    private Transform target2;
     private Transform target;
- 
+
+    private float distance;
 
 
 
-	// Use this for initialization
+    // Use this for initialization
 
-	void Start () {
-        target = Playermanager.instance.player1.transform;
+    void Start () {
+        target1 = Playermanager.instance.player1.transform;
+        target2 = Playermanager.instance.player2.transform;
         //agent = GetComponent<NavMeshAgent>();
         MyRigidBody = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        float distance = Vector2.Distance(target.position, transform.position);
+        float distance1 = Vector2.Distance(target1.position, transform.position);
+        float distance2 = Vector2.Distance(target2.position, transform.position);
+
+        if (distance1 < distance2)
+        {
+            target = target1;
+            distance = distance1;
+        }
+        else {
+            target = target2;
+            distance = distance2;
+        }
 
         if (distance <= lookRadius)
         {
