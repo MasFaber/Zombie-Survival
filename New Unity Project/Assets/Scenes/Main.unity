@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 8
+  serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -39,6 +39,7 @@ RenderSettings:
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -54,11 +55,10 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 9
+    serializedVersion: 10
     m_Resolution: 2
     m_BakeResolution: 40
-    m_TextureWidth: 1024
-    m_TextureHeight: 1024
+    m_AtlasSize: 1024
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -155,6 +155,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -238,6 +239,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &19583067
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -251,6 +253,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -293,7 +296,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &19583069
 MonoBehaviour:
@@ -309,6 +312,7 @@ MonoBehaviour:
   MoveSpeed: 1
   timeBetweenMove: 2
   timeToMove: 2
+  lookRadius: 10
 --- !u!50 &19583070
 Rigidbody2D:
   serializedVersion: 4
@@ -371,6 +375,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -444,6 +449,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -517,6 +523,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -582,6 +589,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -624,7 +632,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &286539856
 MonoBehaviour:
@@ -661,6 +669,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!61 &286539858
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -723,6 +732,47 @@ MonoBehaviour:
   dashSpeed: 30
   startDashTime: 0.05
   dashCooldown: 1
+--- !u!1 &310005476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 310005477}
+  - component: {fileID: 310005478}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &310005477
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 310005476}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1339300056}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &310005478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 310005476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 121bb0de0c0b96349adf350f5391eaea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: {fileID: 1513521295}
 --- !u!1 &315063692
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,6 +815,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -838,6 +889,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -903,6 +955,7 @@ MonoBehaviour:
   MoveSpeed: 1
   timeBetweenMove: 2
   timeToMove: 2
+  lookRadius: 10
 --- !u!50 &364685882
 Rigidbody2D:
   serializedVersion: 4
@@ -955,6 +1008,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &364685885
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -968,6 +1022,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -1010,7 +1065,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &382150733
 GameObject:
@@ -1054,6 +1109,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -1127,6 +1183,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -1200,6 +1257,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -1273,6 +1331,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -1346,6 +1405,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -1419,6 +1479,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -1450,6 +1511,52 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &667348543
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4318004072860246, guid: 0ef00f7ecc9bc114d8ee3993d0633f8f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.37804496
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318004072860246, guid: 0ef00f7ecc9bc114d8ee3993d0633f8f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 11.04568
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318004072860246, guid: 0ef00f7ecc9bc114d8ee3993d0633f8f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318004072860246, guid: 0ef00f7ecc9bc114d8ee3993d0633f8f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318004072860246, guid: 0ef00f7ecc9bc114d8ee3993d0633f8f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318004072860246, guid: 0ef00f7ecc9bc114d8ee3993d0633f8f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318004072860246, guid: 0ef00f7ecc9bc114d8ee3993d0633f8f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318004072860246, guid: 0ef00f7ecc9bc114d8ee3993d0633f8f, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1499077854329286, guid: 0ef00f7ecc9bc114d8ee3993d0633f8f, type: 2}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0ef00f7ecc9bc114d8ee3993d0633f8f, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &700156779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,6 +1599,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -1565,6 +1673,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -1596,6 +1705,52 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &762728799
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4447753834719686, guid: 2c4c9749dd67cef49ad5ffd5ef794e70, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.553
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447753834719686, guid: 2c4c9749dd67cef49ad5ffd5ef794e70, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 14.485581
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447753834719686, guid: 2c4c9749dd67cef49ad5ffd5ef794e70, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447753834719686, guid: 2c4c9749dd67cef49ad5ffd5ef794e70, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447753834719686, guid: 2c4c9749dd67cef49ad5ffd5ef794e70, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447753834719686, guid: 2c4c9749dd67cef49ad5ffd5ef794e70, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447753834719686, guid: 2c4c9749dd67cef49ad5ffd5ef794e70, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447753834719686, guid: 2c4c9749dd67cef49ad5ffd5ef794e70, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880509911081536, guid: 2c4c9749dd67cef49ad5ffd5ef794e70, type: 2}
+      propertyPath: m_Name
+      value: slime_red_0 (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2c4c9749dd67cef49ad5ffd5ef794e70, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &784317030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,6 +1780,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -1703,6 +1859,7 @@ MonoBehaviour:
   MoveSpeed: 1
   timeBetweenMove: 2
   timeToMove: 2
+  lookRadius: 10
 --- !u!50 &784692560
 Rigidbody2D:
   serializedVersion: 4
@@ -1755,6 +1912,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &784692563
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1768,6 +1926,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -1810,7 +1969,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &816468858
 GameObject:
@@ -1854,6 +2013,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -1927,6 +2087,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -2000,6 +2161,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -2073,6 +2235,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -2146,6 +2309,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -2219,6 +2383,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -2292,6 +2457,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -2365,6 +2531,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -2438,6 +2605,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -2506,7 +2674,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4459508146957804, guid: 47faa6bceac860847991de2c367f1230, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4459508146957804, guid: 47faa6bceac860847991de2c367f1230, type: 2}
       propertyPath: m_LocalScale.x
@@ -2573,6 +2741,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -2646,6 +2815,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -2719,6 +2889,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -2779,6 +2950,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -2865,6 +3037,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -2938,6 +3111,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -3011,6 +3185,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -3084,6 +3259,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -3157,6 +3333,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -3230,6 +3407,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -3295,6 +3473,7 @@ MonoBehaviour:
   MoveSpeed: 1
   timeBetweenMove: 2
   timeToMove: 2
+  lookRadius: 10
 --- !u!50 &1237694856
 Rigidbody2D:
   serializedVersion: 4
@@ -3347,6 +3526,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &1237694859
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3360,6 +3540,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -3402,7 +3583,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1339300052
 GameObject:
@@ -3482,7 +3663,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 310005477}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3497,7 +3679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b84bafb02481b4fae19e184b91d5bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followTarget: {fileID: 286539853}
+  followTarget: {fileID: 1513521295}
   MoveSpeed: 4
 --- !u!1 &1369516469
 GameObject:
@@ -3541,6 +3723,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -3614,6 +3797,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -3687,6 +3871,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -3760,6 +3945,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -3791,6 +3977,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1513521295 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1499077854329286, guid: 0ef00f7ecc9bc114d8ee3993d0633f8f,
+    type: 2}
+  m_PrefabInternal: {fileID: 667348543}
 --- !u!1 &1520553849
 GameObject:
   m_ObjectHideFlags: 0
@@ -3833,6 +4024,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -3906,6 +4098,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -3966,6 +4159,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -4052,6 +4246,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -4125,6 +4320,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -4198,6 +4394,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -4263,6 +4460,7 @@ MonoBehaviour:
   MoveSpeed: 1
   timeBetweenMove: 2
   timeToMove: 2
+  lookRadius: 10
 --- !u!50 &1715728079
 Rigidbody2D:
   serializedVersion: 4
@@ -4315,6 +4513,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &1715728082
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4328,6 +4527,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -4370,7 +4570,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1881304036
 GameObject:
@@ -4414,6 +4614,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -4474,6 +4675,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -4560,6 +4762,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -4633,6 +4836,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -4706,6 +4910,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -4779,6 +4984,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -4852,6 +5058,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b7e77cfbf2c63e94794c0d3812c7ca8f, type: 2}
   m_StaticBatchInfo:
@@ -4962,7 +5169,7 @@ Transform:
   - {fileID: 1126041204}
   - {fileID: 1606281876}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2110933097
 SpriteRenderer:
@@ -4977,6 +5184,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -5025,3 +5233,4 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
