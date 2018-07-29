@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour {
 
 
     //dashing
-    public KeyCode dashButton;
+    public KeyCode dashButton= KeyCode.Space;
     public float dashSpeed;
     private float dashTime;
     public float startDashTime;
@@ -25,12 +25,15 @@ public class PlayerController : MonoBehaviour {
     private float dashCooldownTime;
     public Vector3 direction;
 
+    //Dash effect
+    public GameObject dashEffect;
+
 
     //controls
-    public KeyCode up;
-    public KeyCode down;
-    public KeyCode right;
-    public KeyCode left;
+    public KeyCode up = KeyCode.UpArrow;
+    public KeyCode down = KeyCode.DownArrow;
+    public KeyCode right=KeyCode.RightArrow;
+    public KeyCode left=KeyCode.LeftArrow;
 
 
 
@@ -76,25 +79,15 @@ public class PlayerController : MonoBehaviour {
         if (direction != Vector3.zero)
         {
             transform.Translate(direction * moveSpeed * Time.deltaTime);
+
+            if (moveSpeed == dashSpeed)
+            {
+                Instantiate(dashEffect, transform.position, Quaternion.identity);
+            }
             playerMoving = true;
             LastMove = new Vector2(direction.x, direction.y);
         }
 
-        //if (Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
-        //{
-        //    transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, 0f, 0f));
-        //    playerMoving = true;
-        //    LastMove = new Vector2(Input.GetAxisRaw("Horizontal"), 0f);
-        //}
-
-
-        //if (Input.GetAxisRaw("Vertical") > 0.5f || Input.GetAxisRaw("Vertical") < -0.5f)
-        //{
-        //    //transform.Translate(new Vector3(0f, Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime, 0f));
-        //    MyRigidBody.velocity = new Vector2(MyRigidBody.velocity.x, Input.GetAxisRaw("Vertical") * moveSpeed);
-        //    playerMoving = true;
-        //    LastMove = new Vector2(0f, Input.GetAxisRaw("Vertical"));
-        //}
 
         else
         {
