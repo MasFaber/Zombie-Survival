@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     private Animator anim;
     private Rigidbody2D MyRigidBody;
     private bool playerMoving;
+    private bool playerDashing;
     private Vector2 LastMove;
 
 
@@ -50,16 +51,19 @@ public class PlayerController : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
+        playerMoving = false;
+
         if (Input.GetKeyDown(dashButton) == true && dashCooldownTime <= 0)
         {
             moveSpeed = dashSpeed;
             dashTime = startDashTime;
             dashCooldownTime = dashCooldown;
+            playerDashing = true;
         }
 
         if (dashTime <= 0)
         {
-            playerMoving = false;
+            playerDashing = false;
             moveSpeed = initialMoveSpeed;
         }
         else
@@ -111,6 +115,7 @@ public class PlayerController : MonoBehaviour {
         anim.SetBool("PlayerMoving", playerMoving);
         anim.SetFloat("LastMoveX", LastMove.x);
         anim.SetFloat("LastMoveY", LastMove.y);
+        anim.SetBool("PlayerDashing", playerDashing);
 
     }
     
