@@ -24,29 +24,56 @@ public class SlimeController : MonoBehaviour {
 
     //new
 
-    public float lookRadius=10f;
+    public float lookRadius=15f;
     private Transform target1;
     private Transform target2;
     private Transform target;
 
     private float distance;
 
+    //attacking
+    public float attackRadius = 3f;
+    public float attackSpeedMultiplier = 0.5f;
+    public float attackTime = 3f;
+    private float attackTimer = 0f;
+    public float attackCooldown = 4f;
+    private float attackCooldownTimer = 0f;
+    private bool attacking = false;
+    private Vector3 location=Vector3.zero;
+
+    private Animator anim;
+
 
 
     // Use this for initialization
 
-    void Start () {
+    void Start ()
+    {
         target1 = Playermanager.instance.player1.transform;
         target2 = Playermanager.instance.player2.transform;
-        //agent = GetComponent<NavMeshAgent>();
         MyRigidBody = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
- 
-         float distance1 = Vector2.Distance(target1.position, transform.position);
-         float distance2 = Vector2.Distance(target2.position, transform.position);
+
+        //make sure to keep attacking with same target
+        anim.SetBool("Attacking", attacking);
+        if (attackTimer > 0)
+        {
+            Attack();
+            return;
+        }
+        else
+        {
+            attacking = false;
+        }
+
+
+        //find distance to champ
+        float distance1 = Vector2.Distance(target1.position, transform.position);
+        float distance2 = Vector2.Distance(target2.position, transform.position);
+
 
         if (distance1 < distance2)
         {
@@ -65,6 +92,16 @@ public class SlimeController : MonoBehaviour {
             transform.position = Vector2.MoveTowards(transform.position, target.position, MoveSpeed * Time.deltaTime);
             
         }
+
+        if (distance <= attackRadius && attackCooldownTimer<0)
+        {
+            location = target.position;
+            attackCooldownTimer = attackCooldown;
+            attackTimer = attackTime;
+            Attack();
+
+        }
+
 
         if (moving) {
             timeToMoveCounter -= Time.deltaTime;
@@ -92,11 +129,26 @@ public class SlimeController : MonoBehaviour {
 
             }
         }
-	}
+
+        attackCooldownTimer -= Time.deltaTime;
+
+    }
+
+    public void Attack() {
+        //move toward target at double speed
+        Debug.Log("Attacking");
+        transform.position = Vector2.MoveTowards(transform.position, location, MoveSpeed*attackSpeedMultiplier * Time.deltaTime);
+        attackTimer -= Time.deltaTime;
+        return;
+        //animation
+    }
+
 
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "Player") {
-            Destroy(other.gameObject);
+            //deal damage
+
+            //
 
         }
     }
