@@ -17,11 +17,11 @@ public class PlayerController : MonoBehaviour {
 
     //dashing
     public KeyCode dashButton= KeyCode.Space;
-    public float dashSpeed = 20f;
+    public float dashSpeed = 30f;
     private float dashTime;
-    public float startDashTime=1f;
+    public float startDashTime=0.05f;
     private bool Dashing;
-    public float dashCooldown=2f;
+    public float dashCooldown=1f;
     private float dashCooldownTime;
     public Vector3 direction;
 
