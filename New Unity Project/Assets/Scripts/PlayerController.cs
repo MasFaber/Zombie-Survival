@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour {
 
     private Animator anim;
     private Rigidbody2D MyRigidBody;
-    private bool playerMoving;
+    private bool playerMoving =false;
     private bool playerDashing;
     private Vector2 LastMove;
 
