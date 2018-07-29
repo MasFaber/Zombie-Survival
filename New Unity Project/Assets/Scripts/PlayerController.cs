@@ -60,12 +60,15 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKeyDown(dashButton) == true && dashCooldownTime <= 0)
         {
-            source.clip = DashingSound;
-            source.Play();
+            
             moveSpeed = dashSpeed;
             dashTime = startDashTime;
             dashCooldownTime = dashCooldown;
             playerDashing = true;
+
+            source.clip = DashingSound;
+            source.Play();
+
         }
 
         if (dashTime <= 0)
