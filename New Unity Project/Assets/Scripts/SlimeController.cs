@@ -41,7 +41,7 @@ public class SlimeController : MonoBehaviour {
     private bool attacking = false;
     private Vector3 location=Vector3.zero;
 
-    private Animator anim;
+   // private Animator anim;
 
 
 
@@ -58,7 +58,7 @@ public class SlimeController : MonoBehaviour {
 	void Update () {
 
         //make sure to keep attacking with same target
-        anim.SetBool("Attacking", attacking);
+       // anim.SetBool("Attacking", attacking);
         if (attackTimer > 0)
         {
             Attack();
