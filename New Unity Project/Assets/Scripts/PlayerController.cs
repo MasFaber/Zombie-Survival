@@ -36,10 +36,15 @@ public class PlayerController : MonoBehaviour {
     public KeyCode right=KeyCode.RightArrow;
     public KeyCode left=KeyCode.LeftArrow;
 
+    //audio
+
+    private AudioSource source;
+    public AudioClip DashingSound;
 
 
     // Use this for initialization
     void Start() {
+        source = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         MyRigidBody = GetComponent<Rigidbody2D>();
         dashCooldownTime = 0;
@@ -55,6 +60,8 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKeyDown(dashButton) == true && dashCooldownTime <= 0)
         {
+            source.clip = DashingSound;
+            source.Play();
             moveSpeed = dashSpeed;
             dashTime = startDashTime;
             dashCooldownTime = dashCooldown;
@@ -66,6 +73,7 @@ public class PlayerController : MonoBehaviour {
             playerDashing = false;
             moveSpeed = initialMoveSpeed;
         }
+
         else
         {
             dashTime -= Time.deltaTime;
