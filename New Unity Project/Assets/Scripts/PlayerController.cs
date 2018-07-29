@@ -56,9 +56,9 @@ public class PlayerController : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        playerMoving = false;
+        
 
-        if (Input.GetKeyDown(dashButton) == true && dashCooldownTime <= 0)
+        if (Input.GetKeyDown(dashButton) == true && dashCooldownTime <= 0 && playerMoving==true)
         {
             
             moveSpeed = dashSpeed;
@@ -70,6 +70,8 @@ public class PlayerController : MonoBehaviour {
             source.Play();
 
         }
+
+        playerMoving = false;
 
         if (dashTime <= 0)
         {
