@@ -821,6 +821,16 @@ Prefab:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 114252635620764076, guid: 0ef00f7ecc9bc114d8ee3993d0633f8f,
+        type: 2}
+      propertyPath: startDashTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114252635620764076, guid: 0ef00f7ecc9bc114d8ee3993d0633f8f,
+        type: 2}
+      propertyPath: dashSpeed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ef00f7ecc9bc114d8ee3993d0633f8f, type: 2}
   m_IsPrefabParent: 0
