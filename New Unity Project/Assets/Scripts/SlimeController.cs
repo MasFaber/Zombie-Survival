@@ -155,7 +155,6 @@ public class SlimeController : MonoBehaviour {
 
     public void Attack() {
         //move toward target at double speed
-        Debug.Log("Attacking");
         transform.position = Vector2.MoveTowards(transform.position, location, MoveSpeed*attackSpeedMultiplier * Time.deltaTime);
         attackTimer -= Time.deltaTime;
         return;

@@ -26,8 +26,6 @@ public class PlayerHealth : MonoBehaviour
         if (playerHealth <= 0) {
             playerHealth = 0;
             Destroy(player);
-
-
         }
 
         text.text = "Health " + playerHealth;

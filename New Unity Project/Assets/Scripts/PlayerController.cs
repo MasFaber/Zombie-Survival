@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour {
     public float dashCooldown=1f;
     private float dashCooldownTime;
     public Vector3 direction;
+    public Vector2 lastDirection;
 
     //Dash effect
     public GameObject dashEffect;
@@ -119,14 +120,18 @@ public class PlayerController : MonoBehaviour {
                 MyRigidBody.velocity = new Vector2(MyRigidBody.velocity.x, 0f);
             }
         }
-
-        direction=Vector3.zero;
+        if (direction != Vector3.zero)
+        {
+            lastDirection = new Vector2(direction.x, direction.y);
+        }
+        direction = Vector3.zero;
 
         anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
         anim.SetFloat("MoveY",Input.GetAxisRaw("Vertical"));
 
         anim.SetBool("PlayerMoving", playerMoving);
         anim.SetFloat("LastMoveX", LastMove.x);
+
         anim.SetFloat("LastMoveY", LastMove.y);
         anim.SetBool("PlayerDashing", playerDashing);
 

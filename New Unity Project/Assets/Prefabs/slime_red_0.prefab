@@ -24,12 +24,12 @@ GameObject:
   - component: {fileID: 58773446220208110}
   - component: {fileID: 50922624278680822}
   - component: {fileID: 114299425237799430}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: slime_red_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4447753834719686
 Transform:
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1880509911081536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.927765, y: 15.345537, z: 0}
+  m_LocalPosition: {x: -0.12633052, y: 13.031141, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -96,7 +96,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114299425237799430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,6 +115,7 @@ MonoBehaviour:
   attackSpeedMultiplier: 1.5
   attackTime: 3
   attackCooldown: 4
+  damageToGive: 5
 --- !u!212 &212646579754335034
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -129,7 +129,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
