@@ -41,16 +41,19 @@ public class SlimeController : MonoBehaviour {
     private bool attacking = false;
     private Vector3 location=Vector3.zero;
 
-   // private Animator anim;
+    // private Animator anim;
 
+
+    // damage
+
+    public int damageToGive = 5;
 
 
     // Use this for initialization
 
     void Start ()
     {
-        target1 = Playermanager.instance.player1.transform;
-        target2 = Playermanager.instance.player2.transform;
+        
         MyRigidBody = GetComponent<Rigidbody2D>();
 	}
 	
@@ -71,20 +74,36 @@ public class SlimeController : MonoBehaviour {
 
 
         //find distance to champ
-        float distance1 = Vector2.Distance(target1.position, transform.position);
-        float distance2 = Vector2.Distance(target2.position, transform.position);
+            
 
-
-        if (distance1 < distance2)
-        {
-            target = target1;
-            distance = distance1;
+        if (Playermanager.instance.player1 == null || Playermanager.instance.player2 == null) {
+            if (Playermanager.instance.player1 == null) {
+                target = Playermanager.instance.player2.transform; ;
+                distance = Vector2.Distance(target2.position, transform.position);
+            }
+            if (Playermanager.instance.player2 == null)
+            {
+                target = Playermanager.instance.player1.transform; ;
+                distance = Vector2.Distance(target1.position, transform.position);
+            }
         }
-
         else
         {
-            target = target2;
-            distance = distance2;
+            target1 = Playermanager.instance.player1.transform;
+            target2 = Playermanager.instance.player2.transform;
+            float distance1 = Vector2.Distance(target1.position, transform.position);
+            float distance2 = Vector2.Distance(target2.position, transform.position);
+            if (distance1 < distance2)
+            {
+                target = target1;
+                distance = distance1;
+            }
+
+            else
+            {
+                target = target2;
+                distance = distance2;
+            }
         }
 
         if (distance <= lookRadius)
@@ -146,10 +165,9 @@ public class SlimeController : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "Player") {
-            Destroy(other.gameObject);
+            //how to reference the correct Playerhealth script here?
             //deal damage
-
-            //
+            PlayerHealth.Hurtplayer(damageToGive);
 
         }
     }
