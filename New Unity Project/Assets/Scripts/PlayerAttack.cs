@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour {
 
     public KeyCode attackButton1= KeyCode.G;
+    public int damageToGive;
+    public int damAtt1 = 10;
     //public KeyCode attackButton2 = KeyCode.H;
     private PlayerController controller;
     private Vector2 direction;
@@ -28,6 +30,9 @@ public class PlayerAttack : MonoBehaviour {
             hitDirection = XYToDegrees(direction);
             attackHitboxes[0].transform.eulerAngles = new Vector3(attackHitboxes[0].transform.eulerAngles.x,attackHitboxes[0].transform.eulerAngles.y,
             hitDirection);
+            //set damage properly;
+            damageToGive = damAtt1;
+
             LaunchAttack(attackHitboxes[0]);
            // Debug.Log("Attack" + hitDirection);
 
@@ -41,11 +46,17 @@ public class PlayerAttack : MonoBehaviour {
     private void LaunchAttack(Collider2D col)
     {
         //sphere might be better.
-        Collider2D cols = Physics2D.OverlapBox(col.bounds.center, col.bounds.size,col.transform.eulerAngles.z, LayerMask.GetMask("Enemy"));
+        Collider2D []cols = Physics2D.OverlapBoxAll(col.bounds.center, col.bounds.size,col.transform.eulerAngles.z, LayerMask.GetMask("Enemy"));
         //Collider[] cols= Physics.OverlapBox()
-        if (cols != null)
+        foreach (Collider2D collider in cols)
         {
-            Debug.Log("Enemy hit");
+            if (collider.tag == "Enemy") //not sure if needed
+            {
+                GameObject Enemy = collider.gameObject;
+                //GameObject bodyParent = body.transform.parent.gameObject;
+                Enemy.GetComponent<ZombieHealth>().Hurtenemy(damageToGive);
+            }
+           
         }
 
     }
@@ -55,7 +66,7 @@ public class PlayerAttack : MonoBehaviour {
     {
         double radAngle = Math.Atan2(xy.x, xy.y);
         double degreeAngle = radAngle * 180.0 / Math.PI;
-        hitDirection = (float)(180.0 - degreeAngle);
+        hitDirection = (float)(90f-degreeAngle);
         return hitDirection;
 
     }
