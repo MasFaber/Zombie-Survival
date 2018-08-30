@@ -12,12 +12,14 @@ public class PlayerAttack : MonoBehaviour {
     private PlayerController controller;
     private Vector2 direction;
     private float hitDirection;
+    private Transform playerTransform;
 
     public Collider2D[] attackHitboxes;
 
     // Use this for initialization
     void Start () {
         controller = GetComponent<PlayerController>();
+        
 	}
 	
 	// Update is called once per frame
@@ -55,6 +57,14 @@ public class PlayerAttack : MonoBehaviour {
                 GameObject Enemy = collider.gameObject;
                 //GameObject bodyParent = body.transform.parent.gameObject;
                 Enemy.GetComponent<ZombieHealth>().Hurtenemy(damageToGive);
+
+                //knockback
+                playerTransform = GetComponent<Transform>();
+                Vector3 moveDirection = Enemy.transform.position - playerTransform.transform.position;
+             
+
+                Enemy.GetComponent<Rigidbody2D>().AddForce(moveDirection.normalized*100f);
+                Enemy.GetComponent<SlimeController>().knockbackTimer =0.5f; //this 1f need to be set per attack
             }
            
         }

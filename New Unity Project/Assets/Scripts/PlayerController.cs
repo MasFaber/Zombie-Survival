@@ -37,6 +37,11 @@ public class PlayerController : MonoBehaviour {
     public KeyCode right=KeyCode.RightArrow;
     public KeyCode left=KeyCode.LeftArrow;
 
+    //knockback
+    public float kockback;
+    public float knockbackLength;
+    public float knockbackCount;
+
     //audio
 
     private AudioSource source;
@@ -57,69 +62,75 @@ public class PlayerController : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        
 
-        if (Input.GetKeyDown(dashButton) == true && dashCooldownTime <= 0 && playerMoving==true)
-        {
-            
-            moveSpeed = dashSpeed;
-            dashTime = startDashTime;
-            dashCooldownTime = dashCooldown;
-            playerDashing = true;
 
-            source.clip = DashingSound;
-            source.Play();
+       // if (knockbackCount <= 0f)
+        //{
 
-        }
 
-        playerMoving = false;
-
-        if (dashTime <= 0)
-        {
-            playerDashing = false;
-            moveSpeed = initialMoveSpeed;
-        }
-
-        else
-        {
-            dashTime -= Time.deltaTime;
-        }
-
-        dashCooldownTime -= Time.deltaTime;
-
-        if (Input.GetKey(up)) { direction += Vector3.up; }
-        if (Input.GetKey(down)) { direction += Vector3.down; }
-        if (Input.GetKey(left)) { direction += Vector3.left; }
-        if (Input.GetKey(right)) { direction += Vector3.right; }
-
-        direction.Normalize();
-
-        if (direction != Vector3.zero)
-        {
-            transform.Translate(direction * moveSpeed * Time.deltaTime);
-
-            if (moveSpeed == dashSpeed)
+            if (Input.GetKeyDown(dashButton) == true && dashCooldownTime <= 0 && playerMoving == true)
             {
-                Instantiate(dashEffect, transform.position, Quaternion.identity);
-            }
-            playerMoving = true;
-            LastMove = new Vector2(direction.x, direction.y);
-        }
 
+                moveSpeed = dashSpeed;
+                dashTime = startDashTime;
+                dashCooldownTime = dashCooldown;
+                playerDashing = true;
 
-        else
-        {
-            //Stop moving (for Rigidbody)
-            if (Input.GetAxisRaw("Horizontal") < 0.5f && Input.GetAxisRaw("Horizontal") > -0.5f)
-            {
-                MyRigidBody.velocity = new Vector2(0f, MyRigidBody.velocity.y);
+                source.clip = DashingSound;
+                source.Play();
+
             }
 
-            if (Input.GetAxisRaw("Vertical") < 0.5f && Input.GetAxisRaw("Vertical") > -0.5f)
+            playerMoving = false;
+
+            if (dashTime <= 0)
             {
-                MyRigidBody.velocity = new Vector2(MyRigidBody.velocity.x, 0f);
+                playerDashing = false;
+                moveSpeed = initialMoveSpeed;
             }
-        }
+
+            else
+            {
+                dashTime -= Time.deltaTime;
+            }
+
+            dashCooldownTime -= Time.deltaTime;
+
+            if (Input.GetKey(up)) { direction += Vector3.up; }
+            if (Input.GetKey(down)) { direction += Vector3.down; }
+            if (Input.GetKey(left)) { direction += Vector3.left; }
+            if (Input.GetKey(right)) { direction += Vector3.right; }
+
+            direction.Normalize();
+
+            if (direction != Vector3.zero)
+            {
+                transform.Translate(direction * moveSpeed * Time.deltaTime);
+
+                if (moveSpeed == dashSpeed)
+                {
+                    Instantiate(dashEffect, transform.position, Quaternion.identity);
+                }
+                playerMoving = true;
+                LastMove = new Vector2(direction.x, direction.y);
+            }
+
+
+            else
+            {
+                //Stop moving (for Rigidbody)
+                if (Input.GetAxisRaw("Horizontal") < 0.5f && Input.GetAxisRaw("Horizontal") > -0.5f)
+                {
+                    MyRigidBody.velocity = new Vector2(0f, MyRigidBody.velocity.y);
+                }
+
+                if (Input.GetAxisRaw("Vertical") < 0.5f && Input.GetAxisRaw("Vertical") > -0.5f)
+                {
+                    MyRigidBody.velocity = new Vector2(MyRigidBody.velocity.x, 0f);
+                }
+            }
+
+        //}
         if (direction != Vector3.zero)
         {
             lastDirection = new Vector2(direction.x, direction.y);
