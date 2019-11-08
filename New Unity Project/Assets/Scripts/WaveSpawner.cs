@@ -65,7 +65,7 @@ public class WaveSpawner : MonoBehaviour {
     }
 
     void WaveCompleted() {
-        Debug.Log("wave completed");
+
 
         state = SpawnState.COUNTING;
         waveCountDown = timeBetweenWaves;
@@ -94,13 +94,13 @@ public class WaveSpawner : MonoBehaviour {
 
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
             {
-                Debug.Log("Dead!");
+
                 return false;
             }
 
             searchCountDown = 1f;
         }
-        Debug.Log("Alive!");
+
         return true;
         
 
