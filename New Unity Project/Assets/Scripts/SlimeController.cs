@@ -9,6 +9,7 @@ public class SlimeController : MonoBehaviour {
 
     //old
     public float MoveSpeed;
+    private float initMoveSpeed;
 
     private Rigidbody2D MyRigidBody;
 
@@ -41,6 +42,7 @@ public class SlimeController : MonoBehaviour {
     private bool attacking = false;
     private Vector3 location=Vector3.zero;
 
+
     // private Animator anim;
 
 
@@ -52,16 +54,28 @@ public class SlimeController : MonoBehaviour {
     //zombie knockback
     public float knockbackTimer=0f;
 
+
+
+    
+    
     // Use this for initialization
 
     void Start ()
     {
         MyRigidBody = GetComponent<Rigidbody2D>();
+        initMoveSpeed = MoveSpeed;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-       
+
+        if (!StateMachine.zombieMode)
+        {
+            MoveSpeed = 0;
+        }
+        else {
+            MoveSpeed = initMoveSpeed;
+        }
 
         if (knockbackTimer <= 0)
         {

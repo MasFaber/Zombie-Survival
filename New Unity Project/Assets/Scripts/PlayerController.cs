@@ -47,6 +47,9 @@ public class PlayerController : MonoBehaviour {
     private AudioSource source;
     public AudioClip DashingSound;
 
+    //State Button 
+    public KeyCode changeState = KeyCode.Q;
+
 
     // Use this for initialization
     void Start() {
@@ -135,6 +138,7 @@ public class PlayerController : MonoBehaviour {
         {
             lastDirection = new Vector2(direction.x, direction.y);
         }
+
         direction = Vector3.zero;
 
         anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
@@ -146,6 +150,14 @@ public class PlayerController : MonoBehaviour {
         anim.SetFloat("LastMoveY", LastMove.y);
         anim.SetBool("PlayerDashing", playerDashing);
 
+        if (ManaScript.manaValue == 20) {
+            if (Input.GetKey(changeState)) {
+                StateMachine.zombieMode = false;
+
+
+            }
+
+        }
     }
     
 }

@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 114299425237799430}
   - component: {fileID: 114266783104773932}
   m_Layer: 8
-  m_Name: slime_red_0
+  m_Name: Boss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,7 +91,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1880509911081536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.6424656, y: 24.149597, z: 0}
+  m_LocalPosition: {x: 10, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224042659925361902}
@@ -188,8 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13aa545f95afd294b80e20c5fc2275d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxZombieHealth: 100
-  zombieValue: 10
+  maxZombieHealth: 150
+  zombieValue: 100
   zombieHealth: 0
   zombie: {fileID: 1880509911081536}
   healthBar: {fileID: 114351249037916480}
@@ -208,7 +208,7 @@ MonoBehaviour:
   MoveSpeed: 2
   timeBetweenMove: 2
   timeToMove: 5
-  lookRadius: 30
+  lookRadius: 10
   attackRadius: 3
   attackSpeedMultiplier: 1.5
   attackTime: 3
