@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Collectable
   - Boss
+  - Attack
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -19,9 +21,9 @@ TagManager:
   - Enemy
   - map
   - Collectable
-  - 
-  - 
-  - 
+  - Attack
+  - Player
+  - Item
   - 
   - 
   - 

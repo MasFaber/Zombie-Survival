@@ -1,14 +1,33 @@
 fileFormatVersion: 2
-guid: 214a9b41d5264bb46a1d003cdab17063
+guid: bd16d122384bcbc4082fa1550abda191
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: FireBoltRightSide_0
-    21300002: FireBoltRightSide_1
-    21300004: FireBoltRightSide_2
-    21300006: FireBoltRightSide_3
-    21300008: FireBoltRightSide_4
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: FlameRightAfter_0
+  - first:
+      213: 21300002
+    second: FlameRightAfter_1
+  - first:
+      213: 21300004
+    second: FlameRightAfter_2
+  - first:
+      213: 21300006
+    second: FlameRightAfter_3
+  - first:
+      213: 21300008
+    second: FlameRightAfter_4
+  - first:
+      213: 21300010
+    second: FlameRightAfter_5
+  - first:
+      213: 21300012
+    second: FlameRightAfter_6
+  - first:
+      213: 21300014
+    second: FlameRightAfter_7
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,7 +82,7 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -74,7 +93,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -85,105 +105,174 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FireBoltRightSide_0
+      name: FlameRightAfter_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 49
-        width: 17
-        height: 14
-      alignment: 9
-      pivot: {x: 0.23883876, y: 0.526874}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0d973900bae393249a4f07c13de65609
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FireBoltRightSide_1
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 38
+        x: 38
+        y: 153
         width: 83
         height: 25
       alignment: 9
-      pivot: {x: 0.051220767, y: 0.5752492}
+      pivot: {x: 0.04779641, y: 0.58238894}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0add44547b0e12c468053e92a6252c10
+      spriteID: cd4a35aa755a73a468fc7084a05d2a19
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireBoltRightSide_2
+      name: FlameRightAfter_1
       rect:
         serializedVersion: 2
-        x: 5
-        y: 2
-        width: 10
-        height: 17
+        x: 39
+        y: 118
+        width: 82
+        height: 24
       alignment: 9
-      pivot: {x: 0.5526749, y: 0.36720595}
+      pivot: {x: 0.036699854, y: 0.54767734}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d739bdeb0e09b494abd970cd49262300
+      spriteID: 4a6520e3965c2184cbb2fa2490a9d271
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireBoltRightSide_3
+      name: FlameRightAfter_2
       rect:
         serializedVersion: 2
-        x: 53
-        y: 18
-        width: 68
-        height: 18
+        x: 38
+        y: 88
+        width: 83
+        height: 24
       alignment: 9
-      pivot: {x: 0.047394246, y: 0.5250828}
+      pivot: {x: 0.04779641, y: 0.5667502}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3ce1806e1347b842884e97a0617485c
+      spriteID: f80020f29a831f1449d2953018957954
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireBoltRightSide_4
+      name: FlameRightAfter_3
       rect:
         serializedVersion: 2
-        x: 22
-        y: 0
-        width: 43
-        height: 16
+        x: 38
+        y: 59
+        width: 83
+        height: 22
       alignment: 9
-      pivot: {x: 0.09225078, y: 0.5047026}
+      pivot: {x: 0.045039073, y: 0.39597216}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec367400a6ef0094ba7bc644d3d3ceda
+      spriteID: cd3665c59939f234d9439997e2123fd6
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRightAfter_4
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 31
+        width: 82
+        height: 25
+      alignment: 9
+      pivot: {x: 0.04786366, y: 0.088053435}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11943a170dabd4e42bd6aebc98da2b3f
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRightAfter_5
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 8
+        width: 9
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4042cd0c63513934ea278e5f69299bb4
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRightAfter_6
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 503e80fcfdad01f468e745ddd346120d
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameRightAfter_7
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 1
+        width: 88
+        height: 29
+      alignment: 9
+      pivot: {x: 0.044882298, y: 0.08173996}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29917de2e465bd944bace56137fb70b1
+      internalID: 21300014
       vertices: []
       indices: 
       edges: []
@@ -191,11 +280,13 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 12e5220569c122c469b3418924dd7592
+    spriteID: b13fe418d24340042b019f029eb30998
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

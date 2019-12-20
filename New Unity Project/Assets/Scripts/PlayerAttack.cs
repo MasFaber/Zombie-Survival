@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour {
 
-    public KeyCode attackButton1= KeyCode.G;
+    public KeyCode attackButton1 = KeyCode.G;
     public int damageToGive;
     public int damAtt1 = 10;
     //public KeyCode attackButton2 = KeyCode.H;
@@ -16,27 +16,22 @@ public class PlayerAttack : MonoBehaviour {
 
     public Collider2D[] attackHitboxes;
 
+    public GameObject Attack;
+    public GameObject BasicAttackPrefab;
     // Use this for initialization
-    void Start () {
+    void Start() {
         controller = GetComponent<PlayerController>();
-        
-	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         direction = controller.lastDirection;
 
         if (Input.GetKeyDown(attackButton1))
         {
-            hitDirection = XYToDegrees(direction);
-            attackHitboxes[0].transform.eulerAngles = new Vector3(attackHitboxes[0].transform.eulerAngles.x,attackHitboxes[0].transform.eulerAngles.y,
-            hitDirection);
-            //set damage properly;
-            damageToGive = damAtt1;
-
-            LaunchAttack(attackHitboxes[0]);
-           // Debug.Log("Attack" + hitDirection);
+            BasicAttack();
 
         }
         //if (Input.GetKeyDown(attackButton2))
@@ -45,6 +40,28 @@ public class PlayerAttack : MonoBehaviour {
         //} 
     }
 
+    private void BasicAttack()
+    {
+        Debug.Log("Attack");
+    
+        hitDirection = XYToDegrees(direction);
+
+        attackHitboxes[0].transform.eulerAngles = new Vector3(attackHitboxes[0].transform.eulerAngles.x, 
+        attackHitboxes[0].transform.eulerAngles.y, hitDirection);
+
+
+        //GameObject clone;
+
+        //Instantiate(Attack, transform.position, attackHitboxes[0].transform.rotation);
+
+        BasicAttackPrefab.transform.rotation = attackHitboxes[0].transform.rotation;
+
+        attackHitboxes[0] = BasicAttackPrefab.GetComponent<BoxCollider2D>();
+            //set damage properly;
+        damageToGive = damAtt1;
+           
+        LaunchAttack(attackHitboxes[0]);
+}
     private void LaunchAttack(Collider2D col)
     {
         //sphere might be better.
@@ -76,7 +93,7 @@ public class PlayerAttack : MonoBehaviour {
     {
         double radAngle = Math.Atan2(xy.x, xy.y);
         double degreeAngle = radAngle * 180.0 / Math.PI;
-        hitDirection = (float)(90f-degreeAngle);
+        hitDirection = (float)(90-degreeAngle);
         return hitDirection;
 
     }

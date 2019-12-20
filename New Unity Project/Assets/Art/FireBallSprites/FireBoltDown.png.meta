@@ -1,14 +1,24 @@
 fileFormatVersion: 2
-guid: 7b5f931ae3d04a0468fa99fe8a934c4f
+guid: b64bfca91853b7a4e8894d793cc32b46
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: FireBoltUp_0
-    21300002: FireBoltUp_1
-    21300004: FireBoltUp_2
-    21300006: FireBoltUp_3
-    21300008: FireBoltUp_4
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: FireBoltDown_0
+  - first:
+      213: 21300002
+    second: FireBoltDown_1
+  - first:
+      213: 21300004
+    second: FireBoltDown_2
+  - first:
+      213: 21300006
+    second: FireBoltDown_3
+  - first:
+      213: 21300008
+    second: FireBoltDown_4
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -36,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -63,127 +73,134 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FireBoltUp_0
+      name: FireBoltDown_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 22
-        width: 16
-        height: 43
-      alignment: 9
-      pivot: {x: 0.51821506, y: 0.13061799}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06200cca6f46ee441b256051ea430690
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FireBoltUp_1
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 53
-        width: 18
-        height: 68
-      alignment: 9
-      pivot: {x: 0.52428627, y: 0.047840904}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77a388d09bdd4034cb3337a8b17d97d0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FireBoltUp_2
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 33
-        width: 25
-        height: 83
-      alignment: 9
-      pivot: {x: 0.58160293, y: 0.07161975}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b6eb50937ffac34eac96fb709c12c28
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FireBoltUp_3
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 5
-        width: 17
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d4b60f25e088754e8fef10671880a23
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FireBoltUp_4
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 2
+        x: 1
+        y: 109
         width: 14
         height: 17
       alignment: 9
-      pivot: {x: 0.53122467, y: 0.24284823}
+      pivot: {x: 0.46861383, y: 0.724012}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51ac6cbcbea44f94daa29ad1d0e49d15
+      spriteID: bb422f54148f844499879f0d34ae53bf
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBoltDown_1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 113
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31aba310db2b8ee4f9889cfeccd7221c
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBoltDown_2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 12
+        width: 25
+        height: 83
+      alignment: 9
+      pivot: {x: 0.4179768, y: 0.9376448}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c8516327ca1f874787f486260bc1008
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBoltDown_3
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 7
+        width: 18
+        height: 68
+      alignment: 9
+      pivot: {x: 0.4674509, y: 0.9544872}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f90ef4558536a949b8ccaf322076c5e
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBoltDown_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 63
+        width: 16
+        height: 43
+      alignment: 9
+      pivot: {x: 0.46338177, y: 0.90534633}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8521b26227b0a2459b8ffa5b808c30a
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
@@ -191,11 +208,13 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 231433cee70d35d48b1e20b7cc6b629a
+    spriteID: 6424109b8b5463948988f172bece1886
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour {
 
     private Animator anim;
     private Rigidbody2D MyRigidBody;
+
+    private Collider2D MyCollider;
+
     private bool playerMoving =false;
     private bool playerDashing;
     private Vector2 LastMove;
@@ -50,6 +53,12 @@ public class PlayerController : MonoBehaviour {
     //State Button 
     public KeyCode changeState = KeyCode.Q;
 
+    //Pickup item
+    public KeyCode InteractKey = KeyCode.H;
+    public Interactable interactable=null;
+     
+
+
 
     // Use this for initialization
     void Start() {
@@ -67,9 +76,16 @@ public class PlayerController : MonoBehaviour {
 
 
 
-       // if (knockbackCount <= 0f)
+        // if (knockbackCount <= 0f)
         //{
-
+        if (Input.GetKeyDown(InteractKey))
+        {
+            if (interactable != null)
+            {
+                //interact
+                interactable.Interact();
+            }
+        }
 
             if (Input.GetKeyDown(dashButton) == true && dashCooldownTime <= 0 && playerMoving == true)
             {
@@ -159,5 +175,11 @@ public class PlayerController : MonoBehaviour {
 
         }
     }
+
+    public void SetClosestInteractable(Interactable CloseInter) {
+        interactable = CloseInter;
+
+    }
+
     
 }

@@ -1,14 +1,24 @@
 fileFormatVersion: 2
-guid: 8b6a81268b7d47b41b996fd9e92f9263
+guid: 214a9b41d5264bb46a1d003cdab17063
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: FireBoltLeft_0
-    21300002: FireBoltLeft_1
-    21300004: FireBoltLeft_2
-    21300006: FireBoltLeft_3
-    21300008: FireBoltLeft_4
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: FireBoltRightSide_0
+  - first:
+      213: 21300002
+    second: FireBoltRightSide_1
+  - first:
+      213: 21300004
+    second: FireBoltRightSide_2
+  - first:
+      213: 21300006
+    second: FireBoltRightSide_3
+  - first:
+      213: 21300008
+    second: FireBoltRightSide_4
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,7 +73,7 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -74,7 +84,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -85,105 +96,111 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FireBoltLeft_0
+      name: FireBoltRightSide_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 38
-        width: 83
-        height: 25
-      alignment: 9
-      pivot: {x: 0.94152623, y: 0.5752498}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 065ab754b584447498a95fc22001751c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FireBoltLeft_1
-      rect:
-        serializedVersion: 2
-        x: 109
+        x: 2
         y: 49
         width: 17
         height: 14
       alignment: 9
-      pivot: {x: 0.7124701, y: 0.5053749}
+      pivot: {x: 0.23883876, y: 0.526874}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f10b76fd744a154e9f2c8c750e6c620
+      spriteID: 0d973900bae393249a4f07c13de65609
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireBoltLeft_2
+      name: FireBoltRightSide_1
       rect:
         serializedVersion: 2
-        x: 7
-        y: 18
-        width: 68
-        height: 18
+        x: 33
+        y: 38
+        width: 83
+        height: 25
       alignment: 9
-      pivot: {x: 0.9503924, y: 0.5292638}
+      pivot: {x: 0.051220767, y: 0.5752492}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bacdb63ae2bd894c9a1750015e216d7
+      spriteID: 0add44547b0e12c468053e92a6252c10
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireBoltLeft_3
+      name: FireBoltRightSide_2
       rect:
         serializedVersion: 2
-        x: 112
+        x: 5
         y: 2
         width: 10
         height: 17
       alignment: 9
-      pivot: {x: 0.4849495, y: 0.24769166}
+      pivot: {x: 0.5526749, y: 0.36720595}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1e12c25ab41b3c4a8aa74a5a2b7a8e6
+      spriteID: d739bdeb0e09b494abd970cd49262300
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireBoltLeft_4
+      name: FireBoltRightSide_3
       rect:
         serializedVersion: 2
-        x: 63
-        y: 0
-        width: 43
-        height: 16
+        x: 53
+        y: 18
+        width: 68
+        height: 18
       alignment: 9
-      pivot: {x: 0.9007492, y: 0.53292185}
+      pivot: {x: 0.047394246, y: 0.5250828}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef5b7a7dc404d844889f1cd25fd0e49e
+      spriteID: b3ce1806e1347b842884e97a0617485c
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBoltRightSide_4
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 0
+        width: 43
+        height: 16
+      alignment: 9
+      pivot: {x: 0.09225078, y: 0.5047026}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec367400a6ef0094ba7bc644d3d3ceda
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
@@ -191,11 +208,13 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 721bd2ad743c463468702cec091938bd
+    spriteID: 12e5220569c122c469b3418924dd7592
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
