@@ -196,7 +196,7 @@ public class SlimeController : MonoBehaviour {
         if (other.gameObject.tag == "Player") {
             //how to reference the correct Playerhealth script here?
             //deal damage
-            PlayerHealth.Hurtplayer(damageToGive);
+            PlayerStats.Hurtplayer(damageToGive);
 
         }
     }
